@@ -82,8 +82,7 @@ dnsrecon -d $1
 echo
 echo -e "\e[00;32m# Busqyeda de subdominios del dominio ########################################################\e[00m" 
 echo
-fierce -wordlist xxx -dns $1
-fierce -dns $1
+fierce --domain $1
 dnsmap $1
 dnsenum $1
 echo
