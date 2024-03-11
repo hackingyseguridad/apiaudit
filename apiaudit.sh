@@ -86,9 +86,6 @@ fierce --domain $1
 dnsmap $1
 dnsenum $1
 echo
-echo -e "\e[00;32m# Vulnerabilidades DNS ########################################################\e[00m" 
-echo
-dnswalk -d $1.
 echo
 echo -e "\e[00;32m#Vulnerabilidades SSL########################################################\e[00m" 
 echo
