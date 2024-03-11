@@ -23,11 +23,10 @@ INFO
 
 if [ -z "$1" ]; then
         printf "${Amarillo}" ; echo
-        echo "Test vulnerabilidades web."
-        echo "Uso: $0 <URL>"; printf "${Normal}\n"
+        echo "Test vulnerabilidades API."
+        echo "Uso: $0 <fqdn URI>"; printf "${Normal}\n"
         exit 0
 fi
-
 echo
 echo "================================================="
 echo "test sobre la el fqdn de la URI.: $1"
