@@ -50,10 +50,6 @@ whatweb $1
 HEAD $1
 curl -I -v https://$1
 echo
-echo -e "\e[00;32m# Escaneo con Uniscan ########################################################\e[00m" 
-echo
-uniscan -e -u $1
-echo
 echo -e "\e[00;32m# Detecta firewall o balanceador ########################################################\e[00m" 
 echo
 lbd $1
