@@ -11,7 +11,7 @@ Seguridad API:
 
 - Cifrados recomendatos sobre TLS en HTTPS
 
-- Autentorizacion OAuth2
+- Autenticacion/autorizacion OAuth2
 
 - WebAuthn
 
