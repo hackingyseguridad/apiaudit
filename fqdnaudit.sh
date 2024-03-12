@@ -37,7 +37,7 @@ echo
 echo
 echo -e "\e[00;32m# Escaneo con Nmap de puertos web habituales ########################################################\e[00m" 
 echo
-nmap $1 -Pn -p80,81,443,4443,7443,8000,8080,8081,8443,8888,10443 --script=http-enum --script=http-security-headers --script=http-methods --open -sCV -O
+nmap $1 -Pn -p80,81,443,4443,7443,8000,8080,8081,8443,8888,10443 --script=http-enum --script=http-security-headers --script=http-methods --script=ssl* --open -sCV -O
 echo
 echo -e "\e[00;32m# Escaneo con Nmap de otros puertos  de servicio sensibles ########################################################\e[00m" 
 echo
@@ -75,11 +75,6 @@ echo
 echo
 echo -e "\e[00;32m#Vulnerabilidades SSL########################################################\e[00m" 
 echo
-nmap -p443 --script ssl-heartbleed -Pn $1
-nmap -p443 --script ssl-poodle -Pn $1
-nmap -p443 --script ssl-ccs-injection -Pn $1
-nmap -p443 --script ssl-enum-ciphers -Pn $1
-nmap -p443 --script ssl-dh-params -Pn $1
 sslyze --heartbleed $1
 sslyze --certinfo=basic $1
 sslyze --compression $1
