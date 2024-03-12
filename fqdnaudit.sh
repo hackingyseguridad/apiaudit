@@ -9,12 +9,12 @@ Cyan='\033[0;36m'
 Blanco='\033[0;37m'
 Normal='\033[0m'
 cat << "INFO"
-  __           _                         _ _ _   
- / _| __ _  __| |_ __     __ _ _   _  __| (_) |_ 
+  __           _                         _ _ _
+ / _| __ _  __| |_ __     __ _ _   _  __| (_) |_
 | |_ / _` |/ _` | '_ \   / _` | | | |/ _` | | __|
-|  _| (_| | (_| | | | | | (_| | |_| | (_| | | |_ 
+|  _| (_| | (_| | | | | | (_| | |_| | (_| | | |_
 |_|  \__, |\__,_|_| |_|  \__,_|\__,_|\__,_|_|\__| V 1.0
-        |_|      http://www.hackingyseguridad.com                                                        
+        |_|      http://www.hackingyseguridad.com
 
 $$$$$$ $$$$$ $$$$  $$$ $$$$  $$$     $$$$     $$$$$$ $$$$$ $$$$$$$$$ $$$$$$$$$
 INFO
@@ -30,119 +30,71 @@ echo "================================================="
 echo "test sobre la el fqdn de la URI.: $1"
 echo "================================================="
 echo
-echo -e "\e[00;32m# Informacion del host ########################################################\e[00m" 
+echo -e "\e[00;32m# Informacion del host ########################################################\e[00m"
 echo
 host $1
 echo
+echo -e "\e[00;32m# Versiones HTTP soportadas por el  servidor web ####@@##########################\e[00m"
 echo
-echo -e "\e[00;32m# Escaneo con Nmap de puertos web habituales ########################################################\e[00m" 
-echo
-nmap $1 -Pn -p80,81,443,4443,7443,8000,8080,8081,8443,8888,10443 --script=http-enum --script=http-security-headers --script=http-methods --script=ssl* --open -sCV -O
-echo
-echo -e "\e[00;32m# Escaneo con Nmap de otros puertos  de servicio sensibles ########################################################\e[00m" 
-echo
-nmap $1 -Pn -sVC -p21,22,23,25,53,139,161,389,554,445,631,966,1023,1433,1521,1723,1080,3306,3389,5900,10000 --open
-echo
-echo -e "\e[00;32m# Informacion del servidor web ########################################################\e[00m" 
-echo
+curl -Is --http1.0 https://$1 | head -1
+curl -Is --http1.1 https://$1 | head -1
 curl -Is --http2-prior-knowledge $1 | head -1
+echo
 whatweb $1
+echo
 HEAD $1
+echo
 curl -I -v https://$1
 echo
-echo -e "\e[00;32m# Detecta firewall o balanceador ########################################################\e[00m" 
+echo -e "\e[00;32m# Detecta firewall o balanceador ########################################################\e[00m"
 echo
 lbd $1
 echo
-echo -e "\e[00;32m# Detecta firewall WAF ########################################################\e[00m" 
+echo -e "\e[00;32m# Detecta firewall WAF ########################################################\e[00m"
 echo
 wafw00f $1
 echo
-echo -e "\e[00;32m# Informacion en internet ########################################################\e[00m" 
-echo
-theharvester -l 50 -b google -d $1
-echo
-echo -e "\e[00;32m# Informacion dominio ########################################################\e[00m" 
-echo
-dnsrecon -d $1
-echo
-echo -e "\e[00;32m# Busqyeda de subdominios del dominio ########################################################\e[00m" 
-echo
-fierce --domain $1
-dnsmap $1
-dnsenum $1
-echo
-echo
-echo -e "\e[00;32m#Vulnerabilidades SSL########################################################\e[00m" 
+echo -e "\e[00;32m#Vulnerabilidades SSL, certificado ######################################################\e[00m"
 echo
 sslyze --heartbleed $1
-sslyze --certinfo=basic $1
+sslyze --certinfo $1
 sslyze --compression $1
 sslyze --reneg $1
 sslyze --resum $1
 echo
-echo -e "\e[00;32m#Vulnerabilidades con Kit Golismero ########################################################\e[00m" 
+echo -e "\e[00;32m# Metodo trace ########################################################\e[00m"
 echo
-golismero -e dns_malware scan $1
-golismero -e heartbleed scan $1
-golismero -e brute_url_predictables scan $1
-golismero -e brute_directories scan $1
-golismero -e sqlmap scan $1
-golismero -e sslscan scan $1
-golismero -e zone_transfer scan $1
-golismero -e nikto scan $1
-golismero -e brute_dns scan $1
+curl -ks https://$1/robots.txt -L -H 'User-Agent: Mozilla/5.0' -X TRACE -I
 echo
-echo -e "\e[00;32m# Descubre directorios por fuerza bruta ########################################################\e[00m" 
+echo -e "\e[00;32m# Vulnerabilidades web con Nikto ########################################################\e[00m"
 echo
-dirb http://$1 diccionario.txt -M 100,204,307,400,401,403,409,500,503 -f -w  -z 99 -a "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0" -H "Accept: text/html, applicattion/xhtml+xml, application/xml;q=0.9,*/*;q=0.8"
+nikto -Plugins 'cookies' -host https://$1
+nikto -Plugins 'headers' -host https://$1
+nikto -Plugins 'msgs' -host https://$1
+nikto -Plugins 'httpoptions' -host https://$1
+nikto -Plugins 'ssl' -host https://$1
 echo
-echo -e "\e[00;32m# Vulnerable a XSS ########################################################\e[00m" 
+echo -e "\e[00;32m# Escaneo con Nmap de puertos web habituales ########################################################\e[00m"
 echo
-xsser --all=http://$1
+nmap $1 -Pn -p 80,81,443,4443,7443,8000,8080,8081,8443,8888,9443,10443 --script=http-enum --script=http-security-headers --script=http-methods --script=ssl* --open -sC -O
 echo
-echo -e "\e[00;32m#########################################################\e[00m" 
+echo -e "\e[00;32m# Descubre directorios por fuerza bruta ########################################################\e[00m"
 echo
-dmitry -e $1
-dmitry -s $1
 echo
-echo -e "\e[00;32m# Vulnerabilidad DAV ########################################################\e[00m" 
+echo "Fuzz de: " $1
 echo
-davtest -url http://$1
+echo "Cod Significado"
+echo "--- -----------"
+echo "200 OK"
+echo "301 Movido permamentemente"
+echo "302 Encontrado"
+echo "304 No modificado"
+echo "400 Solicitud incorrecta"
+echo "400 No autorizado"
+echo "403 Prohibido"
+echo "404 No encontrado"
+echo "410 Ya no esta disponible"
+echo "500 Error interno en el servidor"
 echo
-echo -e "\e[00;32m# Vulnerabilidad web ########################################################\e[00m" 
-echo
-golismero -e fingerprint_web scan $1
-echo
-echo -e "\e[00;32m Vulnerabilidades con Uniscan #########################################################\e[00m" 
-echo
-uniscan -w -u $1
-uniscan -q -u $1
-uniscan -r -u $1
-uniscan -s -u $1
-uniscan -d -u $1
-echo
-echo -e "\e[00;32m# Vulnerabilidades web con Nikto ########################################################\e[00m" 
-echo
-nikto -Plugins 'apache_expect_xss' -host $1
-nikto -Plugins 'subdomain' -host $1
-nikto -Plugins 'shellshock' -host $1
-nikto -Plugins 'cookies' -host $1
-nikto -Plugins 'put_del_test' -host $1
-nikto -Plugins 'headers' -host $1
-nikto -Plugins 'ms10-070' -host $1
-nikto -Plugins 'msgs' -host $1
-nikto -Plugins 'outdated' -host $1
-nikto -Plugins 'httpoptions' -host $1
-nikto -Plugins 'cgi' -host $1
-nikto -Plugins 'ssl' -host $1
-nikto -Plugins 'sitefiles' -host $1
-nikto -Plugins 'paths' -host $1
-echo
-echo -e "\e[00;32m# Analisis con wapiti ########################################################\e[00m" 
-wapiti $1 -f txt -o temp_wapiti
-echo
-echo -e "\e[00;32m# Informacion de registro del dominio ########################################################\e[00m" 
-echo
-whois $1
+dirb  https://$1 diccionario.txt -N 302 204 307 400 401 403 409 500 503 -b -f -w -S -z 99 -a "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0" -H "Accept: text/html, applicattion/xhtml+xml, application/xml;q=0.9,*/*;q=0.8"
 echo
