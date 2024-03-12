@@ -34,7 +34,6 @@ echo -e "\e[00;32m# Informacion del host #######################################
 echo
 host $1
 echo
-curl -Is --http2-prior-knowledge $1 | head -1
 echo
 echo -e "\e[00;32m# Escaneo con Nmap de puertos web habituales ########################################################\e[00m" 
 echo
@@ -46,6 +45,7 @@ nmap $1 -Pn -sVC -p21,22,23,25,53,139,161,389,554,445,631,966,1023,1433,1521,172
 echo
 echo -e "\e[00;32m# Informacion del servidor web ########################################################\e[00m" 
 echo
+curl -Is --http2-prior-knowledge $1 | head -1
 whatweb $1
 HEAD $1
 curl -I $1
