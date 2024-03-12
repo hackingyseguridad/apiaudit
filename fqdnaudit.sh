@@ -62,9 +62,15 @@ sslyze --compression $1
 sslyze --reneg $1
 sslyze --resum $1
 echo
-echo -e "\e[00;32m# Metodo trace ########################################################\e[00m"
+echo -e "\e[00;32m# Metodos HTTP ##########################################################\e[00m"
 echo
-curl -ks https://$1/robots.txt -L -H 'User-Agent: Mozilla/5.0' -X TRACE -I
+echo "GET";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X GET -I
+echo "POST"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X POST -I
+echo "PUT";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X PUT -I
+echo "PATCH"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X PATCH -I
+echo "DELETE"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X DELETE -I
+echo "HEAD"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X HEAD -I
+echo "TRACE"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X TRACE -I
 echo
 echo -e "\e[00;32m# Vulnerabilidades web con Nikto ########################################################\e[00m"
 echo
@@ -98,3 +104,5 @@ echo "500 Error interno en el servidor"
 echo
 dirb  https://$1 diccionario.txt -N 302 204 307 400 401 403 409 500 503 -b -f -w -S -z 99 -a "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0" -H "Accept: text/html, applicattion/xhtml+xml, application/xml;q=0.9,*/*;q=0.8"
 echo
+
+
