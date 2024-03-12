@@ -66,14 +66,6 @@ echo -e "\e[00;32m# Informacion en internet ####################################
 echo
 theharvester -l 50 -b google -d $1
 echo
-echo -e "\e[00;32m# Busqueda de recursos vulnerables ########################################################\e[00m" 
-echo
-wget -O temp_aspnet_config_err --tries=1 $1/%7C~.aspx
-wget -O temp_wp_check --tries=1 $1/wp-admin
-wget -O temp_drp_check --tries=1 $1/user
-wget -O temp_joom_check --tries=1 $1/administrator
-wget -O temp_aspnet_elmah_axd --tries=1 $1/elmah.axd
-echo
 echo -e "\e[00;32m# Informacion dominio ########################################################\e[00m" 
 echo
 dnsrecon -d $1
