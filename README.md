@@ -11,9 +11,11 @@ Seguridad Servidor:
 
 - Puertos y servicios abiertos, y las vulnerabilidades de estos
 
-- Servidor Web utilizado, y vulnerabilidades publicas conocidas. Autenticación/Autorización
+- Servidor Web utilizado, y vulnerabilidades publicas conocidas. Autenticación/Autorización;
 
-- Protocolo TLS y cifrados, ofrecidos y Certificado digital con CA publicas, de confianza
+- Protocolo TLS y cifrados debiles, ofrecidos; 
+
+- Certificado digital con CA publicas, de confianza
 
 - X-Cabeceras HTTP de seguridad configuradas
 
