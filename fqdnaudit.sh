@@ -86,9 +86,8 @@ nmap $1 -Pn -p 80,81,443,4443,7443,8000,8080,8081,8443,8888,9443,10443 --script=
 echo
 echo -e "\e[00;32m# Descubre directorios por fuerza bruta ########################################################\e[00m"
 echo
-echo
 echo "Fuzz de: " $1
-echo
+echo "--- -----------"
 echo "Cod Significado"
 echo "--- -----------"
 echo "200 OK"
