@@ -7,6 +7,18 @@ Se requiere Kali Linux con las aplicaciones: davtest dirb dmitry dnsenum dnsmap 
 
 <img style="float:left" alt="API sintaxis" src="https://github.com/hackingyseguridad/apiaudit/blob/main/api.png">
 
+Seguridad Servidor: 
+
+- Puertos y servicios abiertos, y las vulnerabilidades de estos
+
+- Servidor Web utilizado, y vulnerabilidades publicas conocidas
+
+- Protocolo TLS y cifrados, ofrecidos
+
+- X-Cabeceras HTTP de seguridad configuradas
+
+- Metodos HTTP permitidos, GET, POST. PUT, HEAD, TRACE, ..
+
 Seguridad API:
 
 - Cifrados recomendatos sobre TLS en HTTPS
