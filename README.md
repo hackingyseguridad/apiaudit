@@ -43,7 +43,7 @@ Seguridad API:
 
 - OWASP API Security Risks, ver las recomendaciones OWASP
 
-- API Gateway;  
+- API Gateway;  Puerta de enlace de Gestión de API, entre sus aplicaciones cliente y los servicios back-end, para gestionar la: Monitorización, seguridad, punto unico de acceso, ... 
 
 - Error Handling; manejo de errores, detectar errores o comportamientos anomalos distintos a los revisto
 
