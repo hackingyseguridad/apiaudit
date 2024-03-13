@@ -5,7 +5,17 @@ echo
 echo "Uso.: ./apitest.sh https://URI "
 echo
 # Otros metodos HTTP: -X ARBITRARY ACL TRACK, TRACE
-curl -k -s --http1.1 -vvv $1 -X "POST" \
+curl -k -s --http1.1 -vvv $1 " \
+-X 'PUT' \
+-H 'authority: hackingyseguridad.com' \
+-H 'accept: json' \
+-H 'accept-language: es-ES,es;q=0.9,en;q=0.8' \
+-H 'authentication: HACKINGYSEGURIDAD.COM' \
+-H 'behavioroverride: redirectAs404' \
+-H 'content-type: application/json' \
+-H 'cookie: HACKINGYSEGURIDAD.COM' \
+-H 'origin: https://hackingyseguridad.com' \
+-H 'referer: https://hackingyseguridad.com/_?culture=es-es&country=es' \
 -H "X-Custom-IP-Authorization: 127.0.0.1" \
 -H "X-HTTP-Method-Override: ACL" \
 -H "Referer: $1" \
@@ -21,4 +31,4 @@ curl -k -s --http1.1 -vvv $1 -X "POST" \
 -H "Accept: text/html, applicattion/xhtml+xml, application/xml;q=0.9,*/*;q=0.8" \
 -H "Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3" \
 -H "Connection: keep-alive" \
--H 'X-Method-Override: GET' \
+-H 'X-Method-Override: POST' \
