@@ -45,7 +45,7 @@ Seguridad API:
 
 - API Gateway;  
 
-- Error Handling
+- Error Handling; manejo de errores, detectar errores o comportamientos anomalos distintos a los revisto
 
 - Input Validation, comprobar que solo permite para nuestro perfil, los parametros y obtener la información prevista y no otras
 
