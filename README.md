@@ -27,6 +27,8 @@ Seguridad Servidor:
 
 Seguridad API:
 
+- Whitelisting; ACL, Listas de Accceso, para evitar que la API esté disponible desde ciertos origeness. Paises, rangos, IPs, 
+
 - Metodoso de autenticacion/autorizacion OAuth2
 
 - Web Authentication (WebAuthn)
@@ -38,8 +40,6 @@ Seguridad API:
 - Rate Limit: Mecanismos de bloqueo, ante un numero de peticiones por segundo, para  evitar colapso de recursos en Backend
 
 - API Versiones; Versionado de la API, v1, v2, v3, 
-
-- Whitelisting; ACL, Listas de Accceso, para evitar que la API esté disponible desde ciertos origeness. Paises, rangos, IPs, 
 
 - OWASP API Security Risks, ver las recomendaciones OWASP
 
