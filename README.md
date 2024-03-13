@@ -31,7 +31,7 @@ Seguridad API:
 
 - Web Authentication (WebAuthn)
 
-- Leveled API Keys;  credenciales/claves con perfiles con permisos concretos y granulares 
+- Leveled API Keys;  credenciales/claves con perfiles con permisos concretos y granulares. Permisos específicos a claves específicas, 
 
 - Autorizacion: Mecanismos para envio de las crecdenciales, Tockens de autenticacion.
 
@@ -41,11 +41,11 @@ Seguridad API:
 
 - Whitelisting; ACL, Listas de Accceso, para evitar que la API esté disponible desde ciertos origeness. Paises, rangos, IPs, 
 
-- OWASP API Security Risks
+- OWASP API Security Risks, ver las recomendaciones OWASP
 
 - API Gateway;  
 
 - Error Handling
 
-- Input Validation
+- Input Validation, comprobar que solo permite para nuestro perfil, los parametros y obtener la información prevista y no otras
 
