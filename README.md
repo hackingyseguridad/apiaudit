@@ -27,7 +27,7 @@ Seguridad API:
 
 - Metodoso de autenticacion/autorizacion OAuth2
 
-- WebAuthn
+- Web Authentication (WebAuthn)
 
 - Use Leveled API Keys
 
