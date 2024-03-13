@@ -13,7 +13,7 @@ Seguridad Servidor:
 
 - Servidor Web utilizado, y vulnerabilidades publicas conocidas. Autenticación/Autorización;
 
-- Protocolo TLS y cifrados debiles, ofrecidos; 
+- Protocolo TLS y cifrados debiles, ofrecidos; Renegociación a versioens procolos anteriores;
 
 - Certificado digital con CA publicas, de confianza
 
