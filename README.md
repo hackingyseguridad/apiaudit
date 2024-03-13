@@ -31,19 +31,19 @@ Seguridad API:
 
 - Web Authentication (WebAuthn)
 
-- Use Leveled API Keys
+- Leveled API Keys;  credenciales/claves con perfiles con permisos concretos y granulares 
 
-- Autorizacion
+- Autorizacion: Mecanismos para envio de las crecdenciales, Tockens de autenticacion.
 
-- Rate Limit
+- Rate Limit: Mecanismos de bloqueo, ante un numero de peticiones por segundo, para  evitar colapso de recursos en Backend
 
-- API Versiones
+- API Versiones; Versionado de la API, v1, v2, v3, 
 
-- Whitelisting
+- Whitelisting; ACL, Listas de Accceso, para evitar que la API esté disponible desde ciertos origeness. Paises, rangos, IPs, 
 
 - OWASP API Security Risks
 
-- API Gateway
+- API Gateway;  
 
 - Error Handling
 
