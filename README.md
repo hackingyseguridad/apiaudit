@@ -11,19 +11,21 @@ Seguridad Servidor:
 
 - Puertos y servicios abiertos, y las vulnerabilidades de estos
 
-- Servidor Web utilizado, y vulnerabilidades publicas conocidas
+- Servidor Web utilizado, y vulnerabilidades publicas conocidas. Autenticación/Autorización
 
-- Protocolo TLS y cifrados, ofrecidos
+- Protocolo TLS y cifrados, ofrecidos y Certificado digital con CA publicas, de confianza
 
 - X-Cabeceras HTTP de seguridad configuradas
 
 - Metodos HTTP permitidos, GET, POST. PUT, HEAD, TRACE, ..
 
+- Bitrate, mecanismos para evitar ataques DOS, DDoS
+
+- Seguridad de las Cookies, otras vuln
+
 Seguridad API:
 
-- Cifrados recomendatos sobre TLS en HTTPS
-
-- Autenticacion/autorizacion OAuth2
+- Metodoso de autenticacion/autorizacion OAuth2
 
 - WebAuthn
 
