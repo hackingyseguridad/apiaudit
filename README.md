@@ -1,6 +1,6 @@
 # apiaudit
 
-# Clientes -------- Servidor HTTPS ----------- Backend API
+Clientes -------- Servidor HTTPS ---------- Backend API
 
 # Analisis de seguridad API
 
