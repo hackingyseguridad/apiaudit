@@ -2,6 +2,8 @@
 
 Clientes -------- Servidor HTTPS ---------- Backend API
 
+<img style="float:left" alt="api estructura" src="https://github.com/hackingyseguridad/apiaudit/blob/main/api0.png">
+
 # Analisis de seguridad API
 
 Se requiere Kali Linux con las aplicaciones: davtest dirb dmitry dnsenum dnsmap dnsrecon dnswalk fierce golismero host lbd nikto nmap sslyze theharvester uniscan wafw00f wapiti wget whatweb whois xsser
