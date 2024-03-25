@@ -1,0 +1,62 @@
+X-cabeceras, los X-Headers son una forma de agregar información adicional a las respuestas HTTP de un servidor web. Esta información puede ser utilizada para mejorar la seguridad del sitio web, proteger contra ataques y mejorar la experiencia del usuario.
+
+1º.- Ubicación de los archivos de configuración para Apache 2.4.x, de las cabeceras X-Header de seguridad:
+/etc/apache2/apache2.conf
+/etc/apache2/conf-available/security.conf
+
+2º.- Habilitar en Apache 2.4.x módulo headers, mod_headers: 
+El módulo mod_headers es necesario para agregar X-Headers a las respuestas HTTP. Para habilitarlo, edite el archivo de configuración principal de Apache (/etc/apache2/apache2.conf para Apache 2.4 o /etc/apache2/conf.d/security para Apache 2.2) y busque la siguiente línea:
+LoadModule headers_module modules/mod_headers.so
+
+3º.- Cabeceras X-Header más comunes: 
+Header set X-XSS-Protection "1; mode=block"   # Protege contra ataques de secuencias de comandos entre sitios (XSS).
+Header set X-Frame-Options "SAMEORIGIN"  # Protege contra ataques de clickjacking.
+Header set X-Content-Type-Options "nosniff"  # Protege contra MIME sniffing.
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"  # Obliga a los navegadores a usar HTTPS para acceder al sitio web.
+Header set Content-Security-Policy "default-src 'self' # Define qué recursos pueden cargar los navegadores desde un sitio web.
+Header set Referrer-Policy "no-referrer" # Controla cómo se envía la información del referrer a otros sitios web.
+
+4º.- Configurar las directivas X-Header; Para Apache 2.4 editamos el fichero security.conf y añadimos: 
+Activar Headers
+#sudo a2enmod headers
+
+5º.- Conorprobar si estan funcionando las cabeceras
+cat /etc/apache2/apache2.conf |grep mod_headers
+cat /etc/apache2/conf-available/security.conf |grep mod_headers
+apachectl -M | headers
+apache2ctl -M | grep headers
+
+6º.- Editar fichero apache.conf o /etc/apache2/conf-available/security.conf
+#vim /etc/apache2/conf-available/security.conf
+<IfModule mod_headers.c>
+  # X-headers
+  Header set Content-Security-Policy "default-src 'self'; upgrade-insecure-requests;"
+# Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always edit Set-Cookie (.*) "$1; HttpOnly; Secure"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin"
+  Header set X-Frame-Options: "deny"
+  SetEnv modHeadersAvailable true
+</IfModule>
+
++ ejemplos de X-cabeceras: 
+Header set X-Content-Type-Options: "nosniff"
+Header set Content-Security-Policy "frame-ancestors 'self';"
+Header set X-XSS-Protection "1; mode=block"
+Header set x-Frame-Options "SAMEORIGIN"
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header set Referrer-Policy "strict-origin"
+Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+Header set X-Permitted-Cross-Domain-Policies "none"
+Header unset "X-Powered-By"
+Header always unset "X-Powered-By"
+Header always unset "X-Pingback"
+Header always unset "X-CF-Powered-By"
+Header always unset "X-Mod-Pagespeed"
+Header set Feature-Policy: geolocation 'self' https://hackingyseguridad.es; microphone 'none'
+Header set Permissions-Policy: geolocation=()
+
+7º.- Reinicializar Apache y aplicar cambios:
+systemctl restart apache2
+service apache2 restart
