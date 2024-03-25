@@ -105,6 +105,6 @@ action=finish&params={"orderNumber":"5","customerName":{"firstName":"Antonio","l
 10º.- Hacer pruebas con la API, birate, carga, conexiones concurrentes, bandwicht;  si se ha configurado algún servicio de mitigación de ataques AntiDDoS hacer pruebas de alertas y mitigación previas,  hacer análisis hacking ético previo para comprobar que todo está acorde a todo lo descrito anterior.
 
 
-
+cat fichero.josn \ jq
 http://www.hackingyseguridad.com
 https://owasp.org/www-project-api-security/
