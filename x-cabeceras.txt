@@ -1,8 +1,10 @@
-X-cabeceras, los X-Headers son una forma de agregar información adicional a las respuestas HTTP de un servidor web. Esta información puede ser utilizada para mejorar la seguridad del sitio web, proteger contra ataques y mejorar la experiencia del usuario.
+x-cabeceras, los X-Headers son una forma de agregar información adicional a las respuestas HTTP de un servidor web. Esta información puede ser utilizada para mejorar la seguridad del sitio web, proteger contra ataques y mejorar la experiencia del usuario.
 
-1º.- Ubicación de los archivos de configuración para Apache 2.4.x, de las cabeceras X-Header de seguridad:
+1º.- Ubicación de los archivos de configuración para Apache 2.4.x, segun la versión, donde se configuran las cabeceras X-Header de seguridad:
 /etc/apache2/apache2.conf
 /etc/apache2/conf-available/security.conf
+/etc/apache2/httpd.conf
+/etc/httpd/httpd.conf
 
 2º.- Habilitar en Apache 2.4.x módulo headers, mod_headers: 
 El módulo mod_headers es necesario para agregar X-Headers a las respuestas HTTP. Para habilitarlo, edite el archivo de configuración principal de Apache (/etc/apache2/apache2.conf para Apache 2.4 o /etc/apache2/conf.d/security para Apache 2.2) y busque la siguiente línea:
@@ -16,9 +18,8 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 Header set Content-Security-Policy "default-src 'self' # Define qué recursos pueden cargar los navegadores desde un sitio web.
 Header set Referrer-Policy "no-referrer" # Controla cómo se envía la información del referrer a otros sitios web.
 
-4º.- Configurar las directivas X-Header; Para Apache 2.4 editamos el fichero security.conf y añadimos: 
-Activar Headers
-#sudo a2enmod headers
+4º.- Configurar las directivas X-Header; Para Apache 2.4 editamos el fichero security.conf y añadimos;  Activar Headers:
+sudo a2enmod headers
 
 5º.- Conorprobar si estan funcionando las cabeceras
 cat /etc/apache2/apache2.conf |grep mod_headers
