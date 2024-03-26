@@ -22,7 +22,7 @@ cat << "INFO"
     /_/ \_\_____/_____/ \__\___||___/\__| Beta
 INFO
 $BlancoAlt
-echo "                  hackingyseguridad.com"
+echo "        http://www.hackingyseguridad.com"
 echo
 $Blanco
 if [ -z "$1" ]; then
