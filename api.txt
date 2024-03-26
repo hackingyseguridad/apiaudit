@@ -22,6 +22,13 @@ Request Body:
 
 obtenemos respuesta Json
 
+SOAP:  Protocolo simple de acceso a objetos, es un protocolo de mensajería basado en XML. 
+GraphQL: GraphQL es un lenguaje de consulta que permite a los usuarios conectarse e interactuar con fuentes de datos dispares a través de un único punto final API. Uuna solicitud aparentemente simple puede requerir un procesamiento posterior significativo o tener impactos de lectura/escritura de amplio alcance que violan los permisos de acceso.
+WebSockets: los WebSockets permiten una comunicación bidireccional continua entre clientes y un servidor a través de una única conexión TCP. WebSockets no maneja la autenticación o el cifrado directamente, lo que significa que los desarrolladores deben utilizar TLS explícitamente y verificar la autorización.
+gRPC:llamada a procedimiento remoto (RPC) que opera a través de HTTP/2 y facilita la comunicación de baja latencia entre servicios políglotas y clientes a escala. Al igual que SOAP, gRPC se basa en la serialización para transmitir datos, pero utiliza Protocol Buffers como mecanismo
+
+cat fichero.josn \ jq
+
 1.- Tipos de API, como funciona, tipo: REST, GraphQL, WebSocket, SOAP, JSON RPC, XML, HTTP, HTTPS.
 
 API SOAP es un protocolo de acceso a objetos simples, la trasferencia de datos es XML a traves de HTTP/HTTPS
@@ -105,6 +112,6 @@ action=finish&params={"orderNumber":"5","customerName":{"firstName":"Antonio","l
 10º.- Hacer pruebas con la API, birate, carga, conexiones concurrentes, bandwicht;  si se ha configurado algún servicio de mitigación de ataques AntiDDoS hacer pruebas de alertas y mitigación previas,  hacer análisis hacking ético previo para comprobar que todo está acorde a todo lo descrito anterior.
 
 
-cat fichero.josn \ jq
+
 http://www.hackingyseguridad.com
 https://owasp.org/www-project-api-security/
