@@ -13,7 +13,7 @@ Se requiere Kali Linux con las aplicaciones: davtest dirb dmitry dnsenum dnsmap 
 
 # Seguridad del servidor: Proceso automatico, solo con el FQDN/IP y script: fqdnaudit.sh
 
-- Puertos y servicios abiertos, en el servidor y las vulnerabilidades CVE de estos
+- Puertos y servicios abiertos, en el servidor HTTP/HTTPS y las vulnerabilidades CVE de estos
 
 - Servidor web/HTTPS utilizado, y vulnerabilidades publicas conocidas. Autenticación/Autorización;
 
