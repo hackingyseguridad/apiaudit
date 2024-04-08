@@ -1,6 +1,6 @@
 # apiaudit
 
-Clientes -------- Servidor HTTPS ---------- Backend API
+Clientes -------- Servidor HTTPS ---------- API Gateway ---------- Backend API
 
 <img style="float:left" alt="api estructura" src="https://github.com/hackingyseguridad/apiaudit/blob/main/api0.png">
 
@@ -23,7 +23,7 @@ Se requiere Kali Linux con las aplicaciones: davtest dirb dmitry dnsenum dnsmap 
 
 - X-Cabeceras HTTP de seguridad configuradas
 
-- Métodos HTTP permitidos, GET, POST. PUT, HEAD, TRACE, ..
+- Métodos HTTP permitidos, GET, HEAD, OPTIONS, POST, PUT, TRACE, CONNECT, DELETE, ..
 
 - Bitrate, mecanismos para evitar ataques DOS de colapso de peticiones y de recursos en Backedn, o DDoS,
 
