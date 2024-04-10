@@ -72,6 +72,9 @@ echo "DELETE"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X DELETE -I
 echo "HEAD"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X HEAD -I
 echo "TRACE"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X TRACE -I
 echo
+echo -e "\e[00;32m# SQLi ########################################################\e[00m"
+sqlmap -u 'https://$1' --crawl=3 --random-agent --batch --forms --threads=5 --hostname --timeout=15 --retries=1 --time-sec 12
+echo
 echo -e "\e[00;32m# Vulnerabilidades web con Nikto ########################################################\e[00m"
 echo
 nikto -Plugins 'cookies' -host https://$1
