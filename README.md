@@ -8,8 +8,20 @@ Clientes -------- Servidor HTTPS ---------- API Gateway ---------- Backend API
 
 Se requiere Kali Linux con las aplicaciones: davtest dirb dmitry dnsenum dnsmap dnsrecon dnswalk fierce golismero host lbd nikto nmap sslyze theharvester uniscan wafw00f wapiti wget whatweb whois xsser
 
+Las API (interfaces de programación de aplicaciones) permiten que los sistemas y aplicaciones de software se comuniquen y compartan datos. Las pruebas de API son importantes ya que las vulnerabilidades en las API pueden socavar aspectos fundamentales de la confidencialidad, integridad y disponibilidad de un sitio web.
 
 <img style="float:left" alt="API sintaxis" src="https://github.com/hackingyseguridad/apiaudit/blob/main/api.png">
+
+OWASP: 
+https://portswigger.net/web-security/api-testing/top-10-api-vulnerabilities
+
+Documentación API
+Las API suelen estar documentadas para que los desarrolladores sepan cómo utilizarlas e integrarlas.
+
+La documentación puede estar en formatos legibles por humanos y por máquinas. La documentación legible por humanos está diseñada para que los desarrolladores comprendan cómo utilizar la API. Puede incluir explicaciones detalladas, ejemplos y escenarios de uso. La documentación legible por máquina está diseñada para ser procesada por software para automatizar tareas como la integración y validación de API. Está escrito en formatos estructurados como JSON o XML.
+
+La documentación de la API suele estar disponible públicamente, especialmente si la API está destinada a desarrolladores externos. Si este es el caso, comience siempre su reconocimiento revisando la documentación.
+
 
 # Seguridad del servidor: Proceso automatico, solo con el FQDN/IP y script: fqdnaudit.sh
 
