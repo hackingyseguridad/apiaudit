@@ -22,6 +22,19 @@ La documentación puede estar en formatos legibles por humanos y por máquinas. 
 
 La documentación de la API suele estar disponible públicamente, especialmente si la API está destinada a desarrolladores externos. Si este es el caso, comience siempre su reconocimiento revisando la documentación.
 
+Las API API RESTful y JSON suelen tener y  por ello es facil idenficicarlas con un fuzzer web, porque en su estructura tienen: 
+
+/api
+
+/swagger/index.html
+
+/openapi.json
+
+/api/swagger/v1
+
+/api/swagger
+
+/api
 
 # Seguridad del servidor: Proceso automatico, solo con el FQDN/IP y script: fqdnaudit.sh
 
