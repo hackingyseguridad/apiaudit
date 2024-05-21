@@ -72,3 +72,6 @@ Las API API RESTful y JSON suelen tener y  por ello es facil idenficicarlas con 
 
 - Input Validation, comprobar que solo permite para nuestro perfil, los parámetros y obtener la información prevista y no otras
 
+www.hackingyseguridad.com
+
+
