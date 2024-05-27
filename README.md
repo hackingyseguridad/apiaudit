@@ -36,7 +36,7 @@ Las API API RESTful y JSON suelen tener y  por ello es facil idenficicarlas con 
 
 /api
 
-<img style="float:left" alt="API parametros" src="https://github.com/hackingyseguridad/apiaudit/blob/main/api2.png">
+<img style="float:left" alt="API parametros" src="https://github.com/hackingyseguridad/apiaudit/blob/main/api3.png">
 
 # Seguridad del servidor: Proceso automatico, solo con el FQDN/IP y script: fqdnaudit.sh
 
