@@ -64,13 +64,50 @@ sslyze --resum $1
 echo
 echo -e "\e[00;32m# Metodos HTTP ##########################################################\e[00m"
 echo
-echo "GET";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X GET -I
-echo "POST"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X POST -I
-echo "PUT";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X PUT -I
-echo "PATCH"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X PATCH -I
-echo "DELETE"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X DELETE -I
-echo "HEAD"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X HEAD -I
-echo "TRACE"; curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -X TRACE -I
+echo "ACL";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X ACL
+echo "ARBITRARY";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X ARBITRARY
+echo "BASELINE-CONTROL";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X BASELINE-CONTROL
+echo "BIND";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X BIND
+echo "CHECKIN";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X CHECKIN
+echo "CHECKOUT";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X CHECKOUT
+echo "CONNECT";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X CONNECT
+echo "COPY";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X COPY
+echo "GET";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X GET
+echo "HEAD";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X HEAD
+echo "INDEX";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X INDEX
+echo "LABEL";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X LABEL
+echo "LINK";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X LINK
+echo "LOCK";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X LOCK
+echo "MERGE";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X MERGE
+echo "MKACTIVITY";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X MKACTIVITY
+echo "MKCALENDAR";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X MKCALENDAR
+echo "MKCOL";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X MKCOL
+echo "MKREDIRECTREF";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X MKREDIRECTREF
+echo "MKWORKSPACE";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X MKWORKSPACE
+echo "MOVE";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X MOVE
+echo "OPTIONS";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X OPTIONS
+echo "ORDERPATCH";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X ORDERPATCH
+echo "PATCH";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PATCH
+echo "POST";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X POST
+echo "PRI";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PRI
+echo "PROPFIND";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PROPFIND
+echo "PROPPATCH";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PROPPATCH
+echo "PUT";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PUT
+echo "REBIND";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X REBIND
+echo "REPORT";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X REPORT
+echo "SEARCH";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SEARCH
+echo "SHOWMETHOD";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SHOWMETHOD
+echo "SPACEJUMP";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SPACEJUMP
+echo "TEXTSEARCH";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TEXTSEARCH
+echo "TRACE";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TRACE
+echo "TRACK";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TRACK
+echo "UNBIND";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNBIND
+echo "UNCHECKOUT";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNCHECKOUT
+echo "UNLINK";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNLINK
+echo "UNLOCK";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNLOCK
+echo "UPDATE";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UPDATE
+echo "UPDATEREDIRECTREF";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UPDATEREDIRECTREF
+echo "VERSION-CONTROL";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X VERSION-CONTROL
 echo
 echo -e "\e[00;32m# SQLi ########################################################\e[00m"
 sqlmap -u 'https://$1' --crawl=3 --random-agent --batch --forms --threads=5 --hostname --timeout=15 --retries=1 --time-sec 12
