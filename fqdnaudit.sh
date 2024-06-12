@@ -64,8 +64,8 @@ sslyze --resum $1
 echo
 echo -e "\e[00;32m# Metodos HTTP ##########################################################\e[00m"
 echo
-echo "ACL";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X ACL
-echo "ARBITRARY";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X ARBITRARY
+echo "ACL";  curl -ks https://$1 -L -H 'accept: json' -H 'User-Agent: Mozilla/5.0' -I  -X ACL -H 'X-Method-Override: ACL' -H "X-HTTP-Method: ACL" -H "X-Method-Override: ACL"
+echo "ARBITRARY";  curl -ks https://$1 -L -H 'accept: json' -H 'User-Agent: Mozilla/5.0' -I  -X ARBITRARY -H 'X-Method-Override: ARBITRARY' -H "X-HTTP-Method: ARBITRARY" -H "X-Method-Override: ARBITRARY"
 echo "BASELINE-CONTROL";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X BASELINE-CONTROL
 echo "BIND";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X BIND
 echo "CHECKIN";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X CHECKIN
