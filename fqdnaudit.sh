@@ -52,6 +52,7 @@ lbd $1
 echo
 echo -e "\e[00;32m# Detecta firewall WAF ########################################################\e[00m"
 echo
+curl -sI  https://$1   | grep "server: "
 wafw00f $1
 echo
 echo -e "\e[00;32m#Vulnerabilidades SSL, certificado ######################################################\e[00m"
