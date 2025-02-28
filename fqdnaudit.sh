@@ -36,24 +36,24 @@ host $1
 echo
 echo -e "\e[00;32m# Versiones HTTP soportadas por el  servidor web ####@@##########################\e[00m"
 echo
-curl -Is --http1.0 https://$1 | head -1
-curl -Is --http1.1 https://$1 | head -1
-curl -Is --http2-prior-knowledge $1 | head -1
+timeout 3 curl -Is --http1.0 https://$1 | head -1
+timeout 3 curl -Is --http1.1 https://$1 | head -1
+timeout 3 curl -Is --http2-prior-knowledge https://$1 | head -1
 echo
-whatweb $1
+whatweb https://$1
 echo
-HEAD $1
+HEAD https://$1
 echo
 curl -I -v https://$1
 echo
 echo -e "\e[00;32m# Detecta firewall o balanceador ########################################################\e[00m"
 echo
-lbd $1
+timeout 3 lbd $1
 echo
 echo -e "\e[00;32m# Detecta firewall WAF ########################################################\e[00m"
 echo
 curl -sI  https://$1   | grep "server: "
-wafw00f $1
+timeout 3 wafw00f $1
 echo
 echo -e "\e[00;32m#Vulnerabilidades SSL, certificado ######################################################\e[00m"
 echo
@@ -75,7 +75,7 @@ echo "OPTIONS";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X OPTI
 echo "PATCH";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PATCH -H 'X-Method-Override: PATCH' -H "X-HTTP-Method: PATCH" -H "X-Method-Override: PATCH"
 echo " ==== Mas metodos http!"
 echo "ACL";  curl -ks https://$1 -L -H 'accept: json' -H 'User-Agent: Mozilla/5.0' -I  -X ACL -H 'X-Method-Override: ACL' -H "X-HTTP-Method: ACL" -H "X-Method-Override: ACL"
-echo "ARBITRARY";  curl -ks https://$1 -L -H 'accept: json' -H 'User-Agent: Mozilla/5.0' -I  -X ARBITRARY 
+echo "ARBITRARY";  curl -ks https://$1 -L -H 'accept: json' -H 'User-Agent: Mozilla/5.0' -I  -X ARBITRARY
 echo "BASELINE-CONTROL";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X BASELINE-CONTROL -H 'X-Method-Override: BASELINE-CONTROL' -H "X-HTTP-Method: BASELINE-CONTROL" -H "X-Method-Override: BASELINE-CONTROL"
 echo "BIND";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X BIND  -H 'X-Method-Override: BIND' -H "X-HTTP-Method: BIND" -H "X-Method-Override: BIND"
 echo "CHECKIN";  curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X CHECKIN -H 'X-Method-Override: CHECKIN' -H "X-HTTP-Method: CHECKIN" -H "X-Method-Override: CHECKIN"
@@ -146,5 +146,4 @@ echo "500 Error interno en el servidor"
 echo
 dirb  https://$1 diccionario.txt -N 302 204 307 400 401 403 409 500 503 -b -f -w -S -z 99 -a "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0" -H "Accept: text/html, applicattion/xhtml+xml, application/xml;q=0.9,*/*;q=0.8"
 echo
-
 
