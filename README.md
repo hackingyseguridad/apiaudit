@@ -68,51 +68,49 @@ Las API API RESTful y JSON suelen tener y  por ello es facil idenficicarlas con 
 
 - Leveled API Keys; credenciales/claves con perfiles con permisos concretos y granulares. Permisos específicos a claves específicas, Autorizacion: Mecanismos para envio de las crecdenciales, Tockens de autenticacion.
 
-- API Versiones; Versionado de la API, v1, v2, v3,
-
 - Error Handling; manejo de errores, detectar errores o comportamientos anomalos distintos a los revisto
 
 - Input Validation, comprobar que solo permite para nuestro perfil, los parámetros y obtener la información prevista y no otras
 
-Autenticación Fuerte: Utilice OAuth 2.0 o JWT para el acceso autorizado.
+- Autenticación Fuerte: Utilice OAuth 2.0 o JWT para el acceso autorizado.
 
-Control de Acceso: Defina permisos granulares para los puntos de enlace (endpoints).
+- Control de Acceso: Defina permisos granulares para los puntos de enlace (endpoints).
 
-Cifrado HTTPS: Transmita datos de forma segura con HTTPS.
+- Cifrado HTTPS: Transmita datos de forma segura con HTTPS.
 
-Sanitización de Entradas: Limpie y valide los datos entrantes.
+- Sanitización de Entradas: Limpie y valide los datos entrantes.
 
-Limitación de Tasa (Rate Limiting): Prevenga el abuso de la API mediante la limitación de solicitudes.
+- Limitación de Tasa (Rate Limiting): Prevenga el abuso de la API mediante la limitación de solicitudes.
 
-Mensajes de Error Seguros: Evite revelar información sensible en los errores.
+- Mensajes de Error Seguros: Evite revelar información sensible en los errores.
 
-Cifrado de Datos: Encripte los datos sensibles tanto en tránsito como en reposo.
+- Cifrado de Datos: Encripte los datos sensibles tanto en tránsito como en reposo.
 
-Registro y Auditoría (Logging): Mantenga registros (logs) exhaustivos de actividad.
+- Registro y Auditoría (Logging): Mantenga registros (logs) exhaustivos de actividad.
 
-Restricción de Intentos de Inicio de Sesión: Prevenga ataques de fuerza bruta.
+- Restricción de Intentos de Inicio de Sesión: Prevenga ataques de fuerza bruta.
 
-Versionado de API: Gestione los cambios y la compatibilidad con versiones anteriores de forma adecuada.
+- Versionado de API: Gestione los cambios y la compatibilidad con versiones anteriores de forma adecuada. API Versiones; Versionado de la API, v1, v2, v3,
 
-Encabezados de Seguridad: Utilice CSP (Política de Seguridad de Contenido) y X-XSS-Protection.
+- Encabezados de Seguridad: Utilice CSP (Política de Seguridad de Contenido) y X-XSS-Protection.
 
-Configuración CORS: Restrinja las solicitudes de origen cruzado.
+- Configuración CORS: Restrinja las solicitudes de origen cruzado.
 
-Expiración de Tokens: Establezca tokens de acceso de corta duración.
+- Expiración de Tokens: Establezca tokens de acceso de corta duración.
 
-Validación Segura de Datos: Valide tanto los datos de entrada como los de salida.
+- Validación Segura de Datos: Valide tanto los datos de entrada como los de salida.
 
-Documentación Segura de la API: Evite revelar información interna sensible en los manuales.
+- Documentación Segura de la API: Evite revelar información interna sensible en los manuales.
 
-Pruebas de Seguridad: Evalúe regularmente la existencia de vulnerabilidades.
+- Pruebas de Seguridad: Evalúe regularmente la existencia de vulnerabilidades. Pruebas hacking etico
 
-Desactivar Errores por Defecto: Evite que se muestren detalles internos del sistema.
+- Desactivar Errores por Defecto: Evite que se muestren detalles internos del sistema.
 
-Gestión Segura de Sesiones: Invalide las sesiones de forma segura.
+- Gestión Segura de Sesiones: Invalide las sesiones de forma segura.
 
-Uso de Tokens CSRF: Prevenga solicitudes no autorizadas.
+- Uso de Tokens CSRF: Prevenga solicitudes no autorizadas.
 
-Actualizaciones Regulares: Mantenga la API al día con los últimos parches de seguridad.
+- Actualizaciones Regulares: Mantenga la API al día con los últimos parches de seguridad.
 
 
 http://www.hackingyseguridad.com/ 
