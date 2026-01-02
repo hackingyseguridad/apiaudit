@@ -62,7 +62,7 @@ Las API API RESTful y JSON suelen tener y  por ello es facil idenficicarlas con 
 
 - API Gateway; Puerta de enlace de Gestión de API, entre sus aplicaciones cliente y los servicios back-end, para gestionar la: Monitorización, seguridad, punto unico de acceso, ...
 
-- Métodos de autenticacion / autorizacion OAuth2, como viajan las credenciales, tockens, codificaciones...
+- Métodos de autenticacion / autorizacion OAuth2, como viajan las credenciales, tockens, codificaciones...  OAuth 2.0 o JWT para autenticacion fuerte, del acceso autorizado.
 
 - Web Authentication (WebAuthn)
 
@@ -71,8 +71,6 @@ Las API API RESTful y JSON suelen tener y  por ello es facil idenficicarlas con 
 - Error Handling; manejo de errores, detectar errores o comportamientos anomalos distintos a los revisto
 
 - Input Validation, comprobar que solo permite para nuestro perfil, los parámetros y obtener la información prevista y no otras
-
-- Autenticación Fuerte: Utilice OAuth 2.0 o JWT para el acceso autorizado.
 
 - Control de Acceso: Defina permisos granulares para los puntos de enlace (endpoints).
 
