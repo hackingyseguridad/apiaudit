@@ -116,6 +116,8 @@ Las API API RESTful y JSON suelen tener y  por ello es facil idenficicarlas con 
 - Actualizaciones Regulares: Mantenga la API al día con los últimos parches de seguridad.
 
 
+---
+
 http://www.hackingyseguridad.com/ 
 
 
