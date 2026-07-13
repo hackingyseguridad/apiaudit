@@ -245,7 +245,6 @@ Proceso **manual**, con todo el contexto (sintaxis de la API) y acceso real al s
 ### Referencias
 
 - OWASP API Security Top 10: https://portswigger.net/web-security/api-testing/top-10-api-vulnerabilities
-- Sitio del autor: http://www.hackingyseguridad.com/
 
 ---
 
