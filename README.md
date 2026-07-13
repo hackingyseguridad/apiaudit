@@ -25,13 +25,10 @@
 - [Checklist de controles de seguridad](#-checklist-de-controles-de-seguridad)
 - [Recursos y diccionarios incluidos](#-recursos-y-diccionarios-incluidos)
 - [Referencias](#-referencias)
-- [Contribuir](#-contribuir)
-- [Licencia](#-licencia)
-- [Autor](#-autor)
-
+  
 ---
 
-### ¿Qué es apiaudit?
+### apiaudit
 
 Las **API** (interfaces de programación de aplicaciones) permiten que sistemas y aplicaciones se comuniquen entre sí y compartan datos. Las vulnerabilidades en una API pueden comprometer la **confidencialidad, integridad y disponibilidad** de todo un servicio, por lo que su auditoría es una parte crítica de cualquier pentest.
 
@@ -85,7 +82,7 @@ El toolkit está pensado para ejecutarse sobre **Kali Linux**, con las siguiente
 | Fingerprinting | `whatweb` |
 | Descarga / utilidades | `wget` |
 
-> 💡 Instala todas las dependencias de un solo paso con `instalar.sh` (ver [Instalación](#-instalación)).
+> Instala todas las dependencias de un solo paso con `instalar.sh` (ver [Instalación](#-instalación)).
 
 ---
 
